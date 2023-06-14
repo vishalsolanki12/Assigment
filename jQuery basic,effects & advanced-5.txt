@@ -1,0 +1,124 @@
+Q1. What is jQuery?
+A.jQuery is a lightweight, "write less, do more", JavaScript library.
+	The purpose of jQuery is to make it much easier to use JavaScript on your website.
+	jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of 	code. jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+
+Q2. How to Apply CSS Using JQuery, How to Add Class and Remove Class in Jquery, JQuery Animation?
+	1. Applying CSS Using jQuery:
+	To apply CSS styles to elements using jQuery, you can use the `css()` method. It allows you to modify the CSS properties of selected elements.
+
+
+	$(selector).css(property, value);
+
+
+	Example:
+	javascript
+// Apply a red color to paragraphs with the class "my-paragraph"
+	$('.my-paragraph').css('color', 'red');
+
+	In this example, the `css()` method is used to set the color property of all elements with the class "my-paragraph" to red.
+
+	2. Adding and Removing Classes in jQuery:
+	jQuery provides methods to add and remove CSS classes from elements. These methods are `addClass()` and `removeClass()`.
+
+	Syntax:
+	javascript
+	$(selector).addClass(className);
+	$(selector).removeClass(className);
+
+	Example:
+	javascript
+// Add the class "highlight" to an element with the id "my-element"
+	$('#my-element').addClass('highlight');
+
+// Remove the class "highlight" from the same element
+	$('#my-element').removeClass('highlight');
+
+	In this example, the `addClass()` method adds the "highlight" class to the element with the id "my-element". Later, the `removeClass()` method removes the 	"highlight" class from the same element.
+
+3. jQuery Animation:
+A. jQuery provides animation methods that allow you to create various animations on HTML elements. The most commonly used animation methods are `fadeIn()`, 	fadeOut()`, `slideUp()`, and `slideDown()`. These methods change the visibility or size of elements over a specified duration.
+
+	Syntax:
+	javascript
+	$(selector).fadeIn(duration);
+	$(selector).fadeOut(duration);
+	$(selector).slideUp(duration);
+	$(selector).slideDown(duration);
+
+	Example:
+	javascript
+// Fade in an element with the class "my-element" over 1 second
+	$('.my-element').fadeIn(1000);
+
+// Slide up an element with the id "my-element" over 500 milliseconds
+	$('#my-element').slideUp(500);
+
+	In this example, the `fadeIn()` method gradually makes elements with the class "my-element" visible over a duration of 1 second. The `slideUp()` method 	animates the upward movement of the element with the id "my-element" over a duration of 500 milliseconds.
+
+	These are just a few examples of applying CSS, adding and removing classes, and using jQuery animations. jQuery provides a rich set of methods and utilities 	for working with HTML elements and styles, allowing you to create dynamic and interactive web experiences.
+
+Q3. How to create slider with animation?
+A.To create a slider with animation using jQuery, you can leverage the combination of CSS, HTML, and JavaScript/jQuery. Here's a general approach to building a basic 	slider:
+
+	HTML Structure:
+	html
+	<div class="slider">
+	  <div class="slides">
+	    <div class="slide">Slide 1</div>
+ 	   <div class="slide">Slide 2</div>
+	    <div class="slide">Slide 3</div>
+ 	 </div>
+	</div>
+
+	CSS Styling:
+	css
+	.slider {
+	  width: 400px;
+	  height: 300px;
+	  overflow: hidden;
+	}
+
+	.slides {
+	  width: 100%;
+	  height: 100%;
+	  display: flex;
+	}
+
+	.slide {
+	  width: 100%;
+	  height: 100%;
+	  flex-shrink: 0;
+	  display: none;
+	}
+
+	JavaScript/jQuery Code:
+	javascript
+	$(document).ready(function() {
+	  var currentSlide = 0;
+ 	 var slideCount = $('.slide').length;
+
+	  // Show the initial slide
+	  $('.slide').eq(currentSlide).show();
+
+	  // Function to animate the slider
+	  function animateSlider() {
+ 	   // Hide the current slide
+	    $('.slide').eq(currentSlide).fadeOut();
+
+	    // Update the current slide index
+ 	   currentSlide = (currentSlide + 1) % slideCount;
+
+	    // Show the next slide
+ 	   $('.slide').eq(currentSlide).fadeIn();
+ 		 }
+
+	  // Start the animation
+	  setInterval(animateSlider, 3000);
+	});
+
+	In this example, we have a basic slider with three slides. Each slide is represented by a `<div>` element with the class "slide". The slider container has a 	fixed width and height with overflow hidden to ensure that only one slide is visible at a time.
+
+	The JavaScript code uses jQuery to handle the animation. It initializes the currentSlide variable to 0 and the slideCount variable to the total number of 	slides. The `animateSlider()` function is responsible for fading out the current slide, updating the currentSlide index, and fading in the next slide. The 	function is then called repeatedly using `setInterval()` to create an automatic sliding effect every 3 seconds.
+
+	By adjusting the CSS styles and adding more slides, you can customize the appearance and behavior of the slider to fit your requirements. Additionally, you can 	enhance the slider with navigation controls, pagination, or additional animations based on your specific needs.
