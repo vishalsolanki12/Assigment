@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 40px;
+            width: 40px;
+            color: black;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    
+<h1>Maths Operations</h1>
+    <!-- <input type="text" name="" id="inp" onkeypress="getText()"> -->
+    Enter 1st Number: <input type="text" name="" id="inp">
+    <br>
+    <br>
+    Enter 2nd Number: <input type="text" name="" id="inp1">
+    <br><br>
+
+
+    <!-- <input type="text" name="" id="inp" onkeydown="getText()"> -->
+
+
+    <!-- <textarea name="" id="txt" cols="30" rows="10"></textarea> -->
+
+    <button onclick="operatorPls()"> +</button>
+    <button onclick="operatorMns()"> -</button>
+    <button onclick="operatorMlt()"> *</button>
+    <button onclick="operatorDvd()"> /</button>
+    <button onclick="operatorPrsnt()"> %</button>
+
+    <span id="total">Ans is :</span>
+
+
+
+
+    <script>
+        inp = document.getElementById('inp');
+
+        inp1 = document.getElementById('inp1');
+
+        total = document.getElementById('total');
+
+        function operatorPls()
+        {
+            total.innerHTML=(Number(inp.value)+Number(inp1.value));
+        }
+        function operatorMns()
+        {
+            total.innerHTML=(Number(inp.value)-Number(inp1.value));
+        }
+        function operatorMlt()
+        {
+            total.innerHTML=(Number(inp.value)*Number(inp1.value));
+        }
+        function operatorDvd()
+        {
+            total.innerHTML=(Number(inp.value)/Number(inp1.value));
+        }
+        function operatorPrsnt()
+        {
+            total.innerHTML=(Number(inp.value)%Number(inp1.value));
+        }
+        
+        
+    </script>
+</body>
+</html>
